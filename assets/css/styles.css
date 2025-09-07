@@ -1,0 +1,414 @@
+/* ========== RESET + Variables ========== */
+:root {
+  --violet: #d8acbe;
+  --pink: #ecdbdb;
+  --ink: #333;
+  --bg: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+
+  body {
+    font-family: "Roboto", sans-serif;
+  }
+
+  color: var(--ink);
+  background: var(--bg);
+  line-height:1.45;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Accesibilidad*/
+:focus-visible {
+  outline: 3px solid var(--violet);
+  outline-offset: 2px;
+}
+
+/* ========== Header y Branding ========== */
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #4d4c4c;
+}
+
+.brand {
+  margin: 0;
+  font-size: 28px;
+  color: var(--violet);
+}
+
+/* ========== Navegación ========== */
+.nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: var(--violet);
+  color: #fff;
+  padding: 8px 12px;
+}
+
+.nav a,
+.nav .active {
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+.nav a.active,
+.nav a[aria-current="page"],
+.nav .active {
+  background: #fff;
+  color: var(--ink);
+}
+
+.nav a:hover {
+  background: rgba(255, 255, 255, .2);
+}
+
+/* pseudoclase */
+
+/* íconos de los botones de navegación */
+.nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  /* espacio entre icono y texto */
+}
+
+
+/* ========== Buscadores / Controles ========== */
+.search {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 16px auto;
+  padding: 12px 16px;
+  background: var(--pink);
+  border-radius: 12px;
+}
+
+.search input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.search .btn,
+.btn {
+  background: #333;
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+}
+
+/* pseudoclase */
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* pseudoclase */
+
+/* ========== INICIO (Slider + Tip Card) ========== */
+.slider {
+  position: relative;
+  height: 250px;
+  background: #7b7373;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 16px;
+  border-radius: 8px;
+}
+
+.ctrl,
+.slider__ctrl {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: #ddd;
+  color: #111;
+  cursor: pointer;
+}
+
+.ctrl:first-of-type,
+.slider__ctrl:first-of-type {
+  left: 10px;
+}
+
+.ctrl:last-of-type,
+.slider__ctrl:last-of-type {
+  right: 10px;
+}
+
+.tip,
+.card.tip,
+.card--tip {
+  background: var(--pink);
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.badge {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #222;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  background: #fff;
+}
+
+/* ========== Tarjetas ========== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.card {
+  background: var(--pink);
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.card h3 {
+  margin: 4px 0;
+  font-size: 18px;
+}
+
+.card p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.grid .card:nth-child(2) {
+  border: 2px solid var(--violet);
+}
+
+/* pseudoclase */
+
+/* ========== Listado de Alimentos ========== */
+.food-list {
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+}
+
+.food-item {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.food-item img {
+  width: 60px;
+  height: 60px;
+  background: #eee;
+  border-radius: 6px;
+  margin-right: 12px;
+}
+
+.food-item h3 {
+  margin: 0;
+}
+
+.food-item p {
+  margin: 4px 0 0;
+}
+
+/* ========== Curiosidades ========== */
+.curio-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.curio-card {
+  background: var(--pink);
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 400px;
+  flex: 1;
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+/* ========== Contacto (Formulario) ========== */
+.contact {
+  max-width: 720px;
+  margin: 24px auto;
+  padding: 16px;
+  background: #f8c6c6;
+  border-radius: 12px;
+}
+
+.contact label {
+  font-weight: 600;
+  color: #333;
+}
+
+.contact button {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px 16px;
+  border: 0;
+  border-radius: 8px;
+  background: #c0809e;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact button:hover {
+  background: #61455b;
+}
+
+
+
+/* ========== Footer ========== */
+.footer {
+  background: var(--violet);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  flex-wrap: wrap;
+}
+
+.social {
+  display: flex;
+  gap: 8px;
+}
+
+.social .icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  border: 2px solid rgba(255, 255, 255, .85);
+  display: inline-block;
+}
+
+/* ========== Utilidades ========== */
+.container-narrow {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 720px) {
+  .brand {
+    font-size: 22px;
+  }
+
+  .slider {
+    height: 180px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .food-item img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .curio-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ========== Cursor normal ========== */
+body {
+  cursor: url("../img/conejito-parado.png") 16 16, auto;
+}
+
+/* ========== Cursor hover en links/botones ========== */
+a:hover,
+button:hover {
+  cursor: url("../img/conejito-sentado.png") 16 16, pointer;
+}
+
+/* ========== Evitar scroll horizontal ========== */
+html,
+body {
+  overflow-x: hidden;
+}
